@@ -62,13 +62,10 @@ public class MainActivity extends AppCompatActivity
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
-                if (emailValidator(emailEditText.getText().toString()) && emailEditText.getText().length() > 0 &&
-=======
 
-                if ((usernameEditText.getText().length() > 0) &&
+
+                if (
                         emailValidator(emailEditText.getText().toString()) && emailEditText.getText().length() > 0 &&
->>>>>>> 32dadb03816770d6da3ba25de78bfd91bb031229
                         passwordEditText.getText().length() > 0 && nameEditText.getText().length() > 0)
                 {
                     int getYearOfBirth = dateOfBirth.getYear();
@@ -78,12 +75,8 @@ public class MainActivity extends AppCompatActivity
                     if((getYearOfBirth <= 2003) && (getMonthOfBirth <= c.get(Calendar.MONTH + 1)) && (getDayOfBirth <= c.get(Calendar.DAY_OF_MONTH)))
                     {
                         Intent i = new Intent(getApplicationContext(), LoginLanding.class);
-<<<<<<< HEAD
                         i.putExtra("username", "Thank you for signing up: " + nameEditText.getText().toString());
-=======
                         String introText = "Thank you for signing up, ";
-                        i.putExtra("username", introText + usernameEditText.getText().toString());
->>>>>>> 32dadb03816770d6da3ba25de78bfd91bb031229
                         startActivityForResult(i, LOGGED_IN_REQUEST);
                         emailEditText.setText(null);
                         nameEditText.setText(null);

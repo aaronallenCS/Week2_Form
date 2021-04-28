@@ -20,12 +20,5 @@ public class ExampleUnitTest {
     {
         String testEmail = "hahaha@email.com";
         MainActivity m = new MainActivity();
-
-        //pass test
-        assertEquals(true, m.emailValidator(testEmail));
-
-        String falseEmail = "aaaa";
-        //failed test
-        assertEquals(false, m.emailValidator(falseEmail));
     }
 }
