@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.format.DateUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -54,24 +56,41 @@ public class MainActivity extends AppCompatActivity
         dateOfBirth = findViewById(R.id.datePicker);
         dateOfBirth.setMaxDate(new Date().getTime());
 
+        Calendar c = Calendar.getInstance();
+
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
                 if (emailValidator(emailEditText.getText().toString()) && emailEditText.getText().length() > 0 &&
+=======
+
+                if ((usernameEditText.getText().length() > 0) &&
+                        emailValidator(emailEditText.getText().toString()) && emailEditText.getText().length() > 0 &&
+>>>>>>> 32dadb03816770d6da3ba25de78bfd91bb031229
                         passwordEditText.getText().length() > 0 && nameEditText.getText().length() > 0)
                 {
                     int getYearOfBirth = dateOfBirth.getYear();
-                    if(!(getYearOfBirth <= 2003))
+                    int getMonthOfBirth = dateOfBirth.getMonth() + 1;
+                    int getDayOfBirth = dateOfBirth.getDayOfMonth();
+
+                    if((getYearOfBirth <= 2003) && (getMonthOfBirth <= c.get(Calendar.MONTH + 1)) && (getDayOfBirth <= c.get(Calendar.DAY_OF_MONTH)))
                     {
-                        Toast.makeText(getApplicationContext(), "You are not old enough, you must be over 18", Toast.LENGTH_LONG).show();
-                    }
-                    else {
                         Intent i = new Intent(getApplicationContext(), LoginLanding.class);
+<<<<<<< HEAD
                         i.putExtra("username", "Thank you for signing up: " + nameEditText.getText().toString());
+=======
+                        String introText = "Thank you for signing up, ";
+                        i.putExtra("username", introText + usernameEditText.getText().toString());
+>>>>>>> 32dadb03816770d6da3ba25de78bfd91bb031229
                         startActivityForResult(i, LOGGED_IN_REQUEST);
                         emailEditText.setText(null);
                         nameEditText.setText(null);
                         passwordEditText.setText(null);
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "You are not old enough, you must be over 18", Toast.LENGTH_LONG).show();
                     }
                 } else {
                     String toastMessage = "Make sure you filled in every field correctly!";
@@ -81,14 +100,10 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    public boolean emailValidator(String email)
+    private boolean emailValidator(String email)
     {
-        Pattern pattern;
-        Matcher matcher;
-        final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-        pattern = Pattern.compile(EMAIL_PATTERN);
-        matcher = pattern.matcher(email);
-        return matcher.matches();
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        return pattern.matcher(email).matches();
     }
 
     @Override
