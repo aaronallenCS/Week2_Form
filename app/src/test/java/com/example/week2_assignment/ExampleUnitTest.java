@@ -15,10 +15,4 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
 
-    @Test
-    public void checkEmailValidation()
-    {
-        String testEmail = "hahaha@email.com";
-        MainActivity m = new MainActivity();
-    }
 }
