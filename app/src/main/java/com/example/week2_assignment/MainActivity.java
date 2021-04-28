@@ -3,6 +3,7 @@ package com.example.week2_assignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -20,7 +21,7 @@ import java.util.regex.Pattern;
 /*
 
 Aaron Allen
-4/20
+4/26
 
 
  */
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity
 {
     private EditText nameEditText;
     private EditText emailEditText;
-    private EditText usernameEditText;
     private EditText passwordEditText;
     private DatePicker dateOfBirth;
     private Button loginButton;
@@ -37,13 +37,17 @@ public class MainActivity extends AppCompatActivity
     private static final int LOGGED_IN_REQUEST = 2;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getWindow().getDecorView().setBackgroundColor(Color.rgb(255, 182, 193));
+        getSupportActionBar().hide();
+
+
         nameEditText = findViewById(R.id.activity_main_nameEditText);
         emailEditText = findViewById(R.id.activity_main_emailEditText);
-        usernameEditText = findViewById(R.id.activity_main_usernameEditText);
         passwordEditText = findViewById(R.id.activity_main_passwordEditText);
         loginButton = findViewById(R.id.activity_main_loginButton);
 
@@ -53,8 +57,7 @@ public class MainActivity extends AppCompatActivity
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((usernameEditText.getText().length() > 0) &&
-                        emailValidator(emailEditText.getText().toString()) && emailEditText.getText().length() > 0 &&
+                if (emailValidator(emailEditText.getText().toString()) && emailEditText.getText().length() > 0 &&
                         passwordEditText.getText().length() > 0 && nameEditText.getText().length() > 0)
                 {
                     int getYearOfBirth = dateOfBirth.getYear();
@@ -64,10 +67,9 @@ public class MainActivity extends AppCompatActivity
                     }
                     else {
                         Intent i = new Intent(getApplicationContext(), LoginLanding.class);
-                        i.putExtra("username", "Thank you for signing up: " + usernameEditText.getText().toString());
+                        i.putExtra("username", "Thank you for signing up: " + nameEditText.getText().toString());
                         startActivityForResult(i, LOGGED_IN_REQUEST);
                         emailEditText.setText(null);
-                        usernameEditText.setText(null);
                         nameEditText.setText(null);
                         passwordEditText.setText(null);
                     }
