@@ -44,12 +44,6 @@ public class ExampleInstrumentedTest {
     @Test
     public void checkCorrectIntentLaunch() throws Exception
     {
-        Intent resultData = new Intent();
-        String name = "Aaron";
-        resultData.putExtra("name", name);
-        Instrumentation.ActivityResult result = new Instrumentation.ActivityResult(Activity.RESULT_OK, resultData);
-
-        // Set up result stubbing when an intent sent to "contacts" is seen.
-        intending(toPackage("com.example.week2_assignment")).respondWith(result);
+        //will add more updates soon
     }
 }
