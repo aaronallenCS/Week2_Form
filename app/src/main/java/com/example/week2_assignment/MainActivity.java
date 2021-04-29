@@ -31,8 +31,8 @@ Aaron Allen
 public class MainActivity extends AppCompatActivity
 {
     private EditText nameEditText;
-    private EditText emailEditText;
-    private EditText passwordEditText;
+    private EditText description;
+    private EditText occupation;
     private DatePicker dateOfBirth;
     private Button loginButton;
 
@@ -48,13 +48,14 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().hide();
 
 
-        nameEditText = findViewById(R.id.activity_main_nameEditText);
-        emailEditText = findViewById(R.id.activity_main_emailEditText);
-        passwordEditText = findViewById(R.id.activity_main_passwordEditText);
+        nameEditText = findViewById(R.id.name_et);
+        description = findViewById(R.id.description_et);
+        occupation = findViewById(R.id.occupation_et);
+        dateOfBirth = findViewById(R.id.datePicker);
         loginButton = findViewById(R.id.activity_main_loginButton);
 
-        dateOfBirth = findViewById(R.id.datePicker);
         dateOfBirth.setMaxDate(new Date().getTime());
+
 
         Calendar c = Calendar.getInstance();
 
@@ -64,23 +65,25 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
 
 
-                if (
-                        emailValidator(emailEditText.getText().toString()) && emailEditText.getText().length() > 0 &&
-                        passwordEditText.getText().length() > 0 && nameEditText.getText().length() > 0)
+                if (nameEditText.getText().length() > 0 && occupation.getText().length() > 0 && description.getText().length() > 0)
                 {
                     int getYearOfBirth = dateOfBirth.getYear();
                     int getMonthOfBirth = dateOfBirth.getMonth() + 1;
                     int getDayOfBirth = dateOfBirth.getDayOfMonth();
+                    String dob = getMonthOfBirth + "/" +  getDayOfBirth;
 
                     if((getYearOfBirth <= 2003) && (getMonthOfBirth <= c.get(Calendar.MONTH + 1)) && (getDayOfBirth <= c.get(Calendar.DAY_OF_MONTH)))
                     {
                         Intent i = new Intent(getApplicationContext(), LoginLanding.class);
-                        i.putExtra("username", "Thank you for signing up: " + nameEditText.getText().toString());
-                        String introText = "Thank you for signing up, ";
+                        i.putExtra("name", nameEditText.getText().toString());
+                        i.putExtra("description", description.getText().toString());
+                        i.putExtra("occupation", occupation.getText().toString());
+                        i.putExtra("DOB", dob);
+
                         startActivityForResult(i, LOGGED_IN_REQUEST);
-                        emailEditText.setText(null);
                         nameEditText.setText(null);
-                        passwordEditText.setText(null);
+                        description.setText(null);
+                        occupation.setText(null);
                     }
                     else {
                         Toast.makeText(getApplicationContext(), "You are not old enough, you must be over 18", Toast.LENGTH_LONG).show();
@@ -93,12 +96,6 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    private boolean emailValidator(String email)
-    {
-        Pattern pattern = Patterns.EMAIL_ADDRESS;
-        return pattern.matcher(email).matches();
-    }
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -107,8 +104,10 @@ public class MainActivity extends AppCompatActivity
         {
             if(resultCode == RESULT_OK)
             {
-                Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_LONG).show();
-                String text = data.getStringExtra("username");
+                String name = data.getStringExtra("name");
+                String description = data.getStringExtra("description");
+                String occupation = data.getStringExtra("occupation");
+                String dob = data.getStringExtra("DOB");
             }
         }
     }

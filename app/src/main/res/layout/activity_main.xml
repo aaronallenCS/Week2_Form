@@ -18,20 +18,11 @@
             card_view:cardCornerRadius="@dimen/cardview_elevation"
             card_view:cardElevation="@dimen/cardview_elevation"
             android:background="#000">
-
-<!--            <ImageButton-->
-<!--                android:layout_width="150dp"-->
-<!--                android:layout_height="150dp"-->
-<!--                android:src="@drawable/abc_vector_test"-->
-<!--                android:background="@drawable/ic_baseline_favorite_24"-->
-<!--                android:contentDescription="Profile Picture Upload"-->
-<!--                android:layout_marginBottom=""-->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/linearlayout_padding">
+                android:padding="20dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -53,32 +44,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:id="@+id/activity_main_nameEditText" />
+                    android:id="@+id/name_et" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/form_text_size"
-                    android:text="@string/login_form_email" />
+                    android:text="Tell them about you!" />
 
 
                 <EditText
+                    android:id="@+id/description_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:id="@+id/activity_main_emailEditText" />
+                    android:inputType="text" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/form_text_size"
-                    android:text="@string/login_form_password" />
+                    android:text="Occupation" />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:id="@+id/activity_main_passwordEditText" />
+                    android:id="@+id/occupation_et" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -106,12 +96,6 @@
 
         </androidx.cardview.widget.CardView>
 
-        <ImageView
-            android:id="@+id/heart_img"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/ic_baseline_favorite_24" />
 
 
     </LinearLayout>
