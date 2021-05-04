@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".MainActivity"
+        android:id="@+id/activity_main"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
@@ -22,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="@dimen/linear_layout_pad">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -50,7 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/form_text_size"
-                    android:text="Tell them about you!" />
+                    android:text="@string/introduction_tv" />
 
 
                 <EditText
@@ -63,7 +64,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/form_text_size"
-                    android:text="Occupation" />
+                    android:text="@string/occupation_tv" />
 
                 <EditText
                     android:layout_width="match_parent"

@@ -19,4 +19,14 @@
     <string name="date_of_birth">DOB</string>
     <string name="create_another_acct_btn">Create another account</string>
     <string name="profile_picture_txt">Profile Picture</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="tab_text_1">Profile</string>
+    <string name="tab_text_2">Matches</string>
+    <string name="tab_text_3">Settings</string>
+    <string name="introduction_tv">Tell them about you!</string>
+    <string name="occupation_tv">Occupation</string>
+    <string name="description_text">Description</string>
+
 </resources>
