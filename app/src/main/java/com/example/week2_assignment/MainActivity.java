@@ -15,6 +15,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Matcher;
@@ -72,8 +75,14 @@ public class MainActivity extends AppCompatActivity
                     int getDayOfBirth = dateOfBirth.getDayOfMonth();
                     String dob = getMonthOfBirth + "/" +  getDayOfBirth;
 
-                    if((getYearOfBirth <= 2003) && (getMonthOfBirth <= c.get(Calendar.MONTH + 1)) && (getDayOfBirth <= c.get(Calendar.DAY_OF_MONTH)))
+                    LocalDate now = LocalDate.now();
+                    LocalDate birthday = LocalDate.of(getYearOfBirth, getMonthOfBirth, getDayOfBirth);
+                    Period period = Period.between(birthday, now);
+                    int years = period.getYears();
+                    Log.d("TYES", years+"");
+                    if(years >= 18)
                     {
+
                         Intent i = new Intent(getApplicationContext(), LoginLanding.class);
                         i.putExtra("name", nameEditText.getText().toString());
                         i.putExtra("description", description.getText().toString());
