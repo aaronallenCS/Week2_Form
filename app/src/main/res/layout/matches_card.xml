@@ -5,8 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="160dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="180dp"
         android:layout_height="180dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
@@ -14,13 +14,22 @@
         app:cardBackgroundColor="?attr/colorPrimaryDark"
         app:cardCornerRadius="4dp">
 
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:layout_gravity="bottom"
             android:background="#FFFFFF"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="8dp"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/profile_picture_card"
+                android:layout_width="@dimen/image_padding"
+                android:layout_height="@dimen/image_padding"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/abc_vector_test" />
 
             <TextView
                 android:id="@+id/card_view_name"
@@ -38,6 +47,6 @@
                 android:text="Like"
                 android:textAppearance="?attr/textAppearanceBody2" />
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
 </FrameLayout>
