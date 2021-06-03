@@ -109,10 +109,10 @@ public class SettingsFragment extends Fragment
 
         SettingsDao settingDao = db.settingsDao();
         List<Settings> settings = settingDao.getAll();
-        if(settings.isEmpty())
+        if(!settings.isEmpty())
         {
             //grabs most recent entry in the DB
-            interestedAge.setValue(settings.get(settings.size() - 1).maxDistance);
+            interestedAge.setValue(settings.get(settings.size() - 1).);
             privatePublicAccount.setSelection(publicPrivateAdapter.getPosition(settings.get(settings.size() - 1).privateOrPublic));
             gender.setSelection(genderAdapter.getPosition(settings.get(settings.size() - 1).gender));
             maxDistance.setValue(settings.get(settings.size() - 1).maxDistance);
