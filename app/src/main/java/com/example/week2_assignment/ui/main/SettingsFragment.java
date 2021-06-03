@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.room.Room;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -133,8 +132,6 @@ public class SettingsFragment extends Fragment
         setting.ageRange = age;
 
         db.settingsDao().insertSettings(setting);
-
-        getActivity().finish();
     }
 
 

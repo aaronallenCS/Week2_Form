@@ -38,5 +38,6 @@
     <string name="occupation_template">Occupation</string>
     <string name="button_like_txt">Like</string>
     <string name="title_text_match">Title</string>
+    <string name="current_loc_text">Your Current Location:</string>
 
 </resources>

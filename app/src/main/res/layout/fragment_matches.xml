@@ -6,10 +6,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_matches"
     tools:context=".ui.main.MatchesFragment">
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/linearlayout_padding"
+                    android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/currentLocHeader"
+                            android:text="@string/current_loc_text"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/appbar_padding"
+                            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+                            android:layout_width="wrap_content"></TextView>
+
+                        <TextView
+                            android:id="@+id/lat"
+                            android:text="("
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+                            android:layout_width="wrap_content"></TextView>
+
+                        <TextView
+                            android:id="@+id/longi"
+                            android:text=")"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+                            android:layout_width="wrap_content"></TextView>
+
+
+
+
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+        </LinearLayout>
+
 </FrameLayout>
