@@ -112,7 +112,7 @@ public class SettingsFragment extends Fragment
         if(!settings.isEmpty())
         {
             //grabs most recent entry in the DB
-            interestedAge.setValue(settings.get(settings.size() - 1).);
+            interestedAge.setValue(settings.get(settings.size() - 1).ageRange);
             privatePublicAccount.setSelection(publicPrivateAdapter.getPosition(settings.get(settings.size() - 1).privateOrPublic));
             gender.setSelection(genderAdapter.getPosition(settings.get(settings.size() - 1).gender));
             maxDistance.setValue(settings.get(settings.size() - 1).maxDistance);
