@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity
                         nameEditText.setText(null);
                         description.setText(null);
                         occupation.setText(null);
+                        finish();
                     }
                     else {
                         Toast.makeText(getApplicationContext(), "You are not old enough, you must be over 18", Toast.LENGTH_LONG).show();

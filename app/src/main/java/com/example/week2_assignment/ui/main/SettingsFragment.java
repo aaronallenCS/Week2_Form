@@ -109,7 +109,7 @@ public class SettingsFragment extends Fragment
 
         SettingsDao settingDao = db.settingsDao();
         List<Settings> settings = settingDao.getAll();
-        if(settings != null)
+        if(settings.isEmpty())
         {
             //grabs most recent entry in the DB
             interestedAge.setValue(settings.get(settings.size() - 1).maxDistance);
@@ -117,7 +117,6 @@ public class SettingsFragment extends Fragment
             gender.setSelection(genderAdapter.getPosition(settings.get(settings.size() - 1).gender));
             maxDistance.setValue(settings.get(settings.size() - 1).maxDistance);
             matchReminder.setSelection(adapter.getPosition(settings.get(settings.size() - 1).reminderTime));
-
         }
 
 
@@ -134,6 +133,8 @@ public class SettingsFragment extends Fragment
         setting.ageRange = age;
 
         db.settingsDao().insertSettings(setting);
+
+        getActivity().finish();
     }
 
 
