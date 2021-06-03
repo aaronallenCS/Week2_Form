@@ -3,9 +3,16 @@ package com.example.week2_assignment;
 
 
 
+import android.content.Context;
+
+import androidx.room.Room;
+import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 
+import com.example.week2_assignment.db.Settings;
+import com.example.week2_assignment.db.SettingsDao;
+import com.example.week2_assignment.db.SettingsDatabase;
 import com.example.week2_assignment.ui.main.PlaceholderFragment;
 
 import static androidx.test.espresso.Espresso.onData;
@@ -20,13 +27,19 @@ import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.io.IOException;
+import java.util.List;
+
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
@@ -55,5 +68,6 @@ public class ExampleInstrumentedTest {
         onView(withId(R.id.fragment_profile)).check(matches(isDisplayed()));
         onView(withId(R.id.fragment_profile)).perform(swipeLeft());
     }
+
 
 }

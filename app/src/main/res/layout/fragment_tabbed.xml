@@ -45,7 +45,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/cardview_margin"
                         android:layout_marginRight="@dimen/cardview_margin"
-                        android:text="Your Name"
+                        android:text="@string/your_name_template"
                         android:textSize="@dimen/text_size_name" />
 
                     <TextView
@@ -53,7 +53,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/cardview_margin"
-                        android:text="DOB"
+                        android:text="@string/dob_template"
                         android:textSize="@dimen/text_size_name" />
                 </LinearLayout>
 
@@ -62,7 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/occupation_margin_top"
-                    android:text="Occupation"
+                    android:text="@string/occupation_template"
                     android:textSize="@dimen/smaller_text_size" />
 
                 <TextView

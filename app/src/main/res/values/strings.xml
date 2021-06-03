@@ -28,5 +28,15 @@
     <string name="introduction_tv">Tell them about you!</string>
     <string name="occupation_tv">Occupation</string>
     <string name="description_text">Description</string>
+    <string name="max_distance_text">Max Distance:</string>
+    <string name="gender_text">Gender:</string>
+    <string name="private_account_tv">Private Account?</string>
+    <string name="button_update_text">Update Changes</string>
+    <string name="age_range_tv">Age Range</string>
+    <string name="your_name_template">Your Name</string>
+    <string name="dob_template">DOB</string>
+    <string name="occupation_template">Occupation</string>
+    <string name="button_like_txt">Like</string>
+    <string name="title_text_match">Title</string>
 
 </resources>

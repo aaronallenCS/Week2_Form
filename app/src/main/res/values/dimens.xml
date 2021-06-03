@@ -20,4 +20,12 @@
     <dimen name="smaller_text_size">15sp</dimen>
     <dimen name="image_view_top_margin">15dp</dimen>
     <dimen name="image_padding">100dp</dimen>
+    <dimen name="settings_cv_padding">15dp</dimen>
+    <dimen name="date_picker_height">90dp</dimen>
+    <dimen name="settings_tv_width">125dp</dimen>
+    <dimen name="card_view_match_lens">180dp</dimen>
+    <dimen name="matches_card_dimen">16dp</dimen>
+    <dimen name="margin_top_matches_card">20dp</dimen>
+    <dimen name="title_dimens">2dp</dimen>
+    <dimen name="width_matches_card">200dp</dimen>
 </resources>
