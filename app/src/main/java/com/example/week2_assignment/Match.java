@@ -8,7 +8,7 @@ public class Match
 
     public Match(){}
 
-    public Match(String name, String imageUrl, boolean liked, float longi, float lat)
+    public Match(String name, String imageUrl, boolean liked)
     {
         this.name = name;
         this.imageUrl = imageUrl;
