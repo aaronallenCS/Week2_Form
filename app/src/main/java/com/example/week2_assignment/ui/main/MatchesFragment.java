@@ -31,7 +31,6 @@ import android.widget.Toast;
 
 import com.example.week2_assignment.Match;
 import com.example.week2_assignment.R;
-import com.firebase.geofire.GeoFire;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
