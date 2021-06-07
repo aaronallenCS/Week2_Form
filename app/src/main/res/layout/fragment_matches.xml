@@ -26,14 +26,12 @@
 
                         <TextView
                             android:id="@+id/lat"
-                            android:text="("
                             android:layout_height="wrap_content"
                             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
                             android:layout_width="wrap_content"></TextView>
 
                         <TextView
                             android:id="@+id/longi"
-                            android:text=")"
                             android:layout_height="wrap_content"
                             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
                             android:layout_width="wrap_content"></TextView>
